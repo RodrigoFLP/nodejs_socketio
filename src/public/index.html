@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD websockets</title>
+    <link href="./tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body class="bg-gray-100">
+    <nav
+      class="fixed h-14 bg-white shadow-md w-full flex flex-col justify-center"
+    >
+      <div class="font-bold px-4 text-xl">Socket IO</div>
+    </nav>
+    <main class="pt-14 flex flex-row justify-around">
+      <div class="w-1/2">
+        <form id="note-form" class="bg-white p-4 m-4 rounded shadow-md">
+          <div class="font-semibold text-lg pb-2">Agrega una nota</div>
+          <div class="py-2">
+            <input
+              class="
+                shadow
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              type="text"
+              placeholder="Título"
+              id="title"
+            />
+          </div>
+          <div class="py-2">
+            <textarea
+              class="
+                shadow
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              type="text"
+              rows="2"
+              placeholder="Descripción"
+              id="description"
+              autofocus
+            ></textarea>
+          </div>
+          <button
+            class="
+              bg-blue-500
+              hover:bg-blue-700
+              text-white
+              font-bold
+              py-2
+              px-4
+              rounded
+              focus:outline-none focus:shadow-outline
+            "
+            type="submit"
+          >
+            Agregar
+          </button>
+        </form>
+      </div>
+      <div class="flex-grow w-full p-4">
+        <div class="bg-white h-56 w-56 rounded shadow-md p-4">
+          <div class="text-lg font-bold tracking-wide pb-2">Título</div>
+          <div class="tracking-wide" id="note-description">
+            Descripción de la nota introducida en el formulario de la izquierda
+            que contiene un input y un textarea
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/socket.io/socket.io.min.js"></script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
